@@ -1,0 +1,15 @@
+.d-block{
+    max-height: 700px;
+}
+
+body{
+    background-color: #000102;
+}
+
+.navbar .collapse ul .nav-item a{
+    color: white;
+}
+
+.navbar .collapse ul .nav-item .active{
+    color: #66b2b2;
+}
