@@ -3,13 +3,23 @@
 }
 
 body{
-    background-color: #000102;
+    /* background-color: #000102; */
 }
 
 .navbar .collapse ul .nav-item a{
     color: white;
 }
 
-.navbar .collapse ul .nav-item .active{
+/* .navbar .collapse ul .nav-item .active{
     color: #66b2b2;
+} */
+
+.fillWidthSection{
+    min-width: 100%;
+    max-height: auto;
 }
+
+[class*="col-"] {
+    margin-bottom: 15px;
+}
+
