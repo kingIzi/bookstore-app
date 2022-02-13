@@ -3,8 +3,6 @@ const router = express.Router();
 const bodyParser = require("body-parser");
 const formidable = require("formidable");
 const admin = require("../models/storage");
-//const admin = require("firebase-admin");
-//const serviceAccount = require("../serviceAccountKey.json");
 const handler = require("../models/mongoReq.js");
 const { v4: uuidv4 } = require("uuid");
 const Collections = require("../models/models");
@@ -15,11 +13,6 @@ router.use(
   })
 );
 router.use(bodyParser.json());
-
-// admin.initializeApp({
-//   credential: admin.credential.cert(serviceAccount),
-//   storageBucket: process.env.BUCKET_URL,
-// });
 
 const bucket = admin.storage().bucket("gs://syllabustz-bd7fd.appspot.com/");
 
