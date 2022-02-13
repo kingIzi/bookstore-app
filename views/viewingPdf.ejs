@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/headers.ejs') %>
+  <body class="bg-dark">
+    <%- include('partials/navigationBar.ejs') %> <%-
+    include('partials/uploadForm.ejs') %>
+    <div class="container" style="margin-top: 20px">
+      <p
+        class="h1 text-white"
+        style="padding: 10px; border: 1px solid white; margin-bottom: 15px"
+      >
+        <%= books.title %>
+      </p>
+      <embed
+        src="<%= books.bookUrl %>"
+        style="min-height: 500px; width: 100%"
+      />
+    </div>
+  </body>
+</html>

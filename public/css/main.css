@@ -1,18 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
 .d-block{
     max-height: 700px;
 }
 
-body{
-    /* background-color: #000102; */
+.body{
+    font-family: 'Montserrat';
 }
 
-.navbar .collapse ul .nav-item a{
-    color: white;
+h1,h2,h3,h4,h5,h6,li,p{
+    font-family: 'Montserrat'
 }
 
-/* .navbar .collapse ul .nav-item .active{
-    color: #66b2b2;
-} */
+.navbar{
+    background-color: #000102;
+}
+
+.book-container{
+    padding: 20px;
+    display: grid;
+}
+
+.book-container .book-poster ul li{
+    padding: 6px 0 6px 18px;
+    text-decoration: none;
+}
+
+.book-container .book-poster{
+    /* box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5); */
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+.book-container .book-poster:hover{
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.book-container .book-poster .card-body a{
+    text-decoration: none;
+}
 
 .fillWidthSection{
     min-width: 100%;
@@ -25,4 +52,35 @@ body{
 
 .dropdown-menu{
     cursor: pointer;
+}
+
+.book-container .container-heading{
+    padding: 20px 0 20px 0;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-family: 'Raleway';
+    font-weight: bold;
+}
+
+[class*="svg-icon"]{
+    color: white;
+}
+
+.navbar .register-btns{
+    margin-right: 20px;
+}
+
+.navbar .search-bar{
+    width: 20rem;
+}
+
+/* tablet view */
+@media screen and (max-width: 992px) {
+    
+}
+
+/* mobile view */
+@media screen and (max-width: 600px) {
+    
 }

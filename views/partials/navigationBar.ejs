@@ -1,0 +1,72 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">LOGO</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul id="nav-routes" class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a
+              id="home-nav"
+              class="nav-link active"
+              aria-current="page"
+              href="/"
+              >Home</a
+            >
+          </li>
+          <!-- <li class="nav-item">
+            <a id="favorites-nav" class="nav-link" href="/favorites"
+              >Favorites</a
+            >
+          </li> -->
+          <li class="nav-item dropdown">
+            <a
+              id="categories-nav"
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Categories
+            </a>
+            <%- include('categoriesList.ejs') %>
+          </li>
+          <!-- <li class="nav-item">
+            <a id="blog-nav" class="nav-link" href="#">Blog</a>
+          </li> -->
+        </ul>
+        <div class="d-flex register-btns">
+          <button
+            class="btn btn-dark"
+            type="button"
+            data-bs-toggle="modal"
+            data-bs-target="#upload-modal"
+          >
+            <i class="bi bi-upload"></i>
+            Upload
+          </button>
+          <!-- <form style="margin-left: 20px" class="d-flex search-bar">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search By Book Name"
+              aria-label="Search"
+            />
+          </form> -->
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

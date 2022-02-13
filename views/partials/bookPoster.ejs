@@ -1,0 +1,35 @@
+<% for (let i = 0; i < books.length; i++) { %>
+<div class="col-sm-6">
+  <div class="card book-poster">
+    <img
+      class="card-img-top"
+      src="<%= books[i].imgUrl %> "
+      alt="Card image cap"
+      height="250px"
+    />
+    <div class="card-body">
+      <h5 class="card-title text-light"><%= books[i].title %></h5>
+    </div>
+    <ul class="list-group list-group-flush book-details">
+      <li class="list-group-item-transparent d-flex">
+        <h6 class="text-secondary" style="margin-right: 4px">Author:</h6>
+        <h6 class="text-light"><%= books[i].author %></h6>
+      </li>
+      <li class="list-group-item-transparent d-flex">
+        <h6 class="text-secondary" style="margin-right: 4px">Subject:</h6>
+        <h6 class="text-light"><%= books[i].subject %></h6>
+      </li>
+      <li class="list-group-item-transparent d-flex">
+        <h6 class="text-secondary" style="margin-right: 4px">Category:</h6>
+        <h6 class="text-light"><%= books[i].category %></h6>
+      </li>
+    </ul>
+    <div class="card-body">
+      <a href="/viewing/<%= books[i]._id %>" class="card-link text-info">
+        Read Now!
+      </a>
+      <a href="#" class="card-link text-info">Add To Favorites</a>
+    </div>
+  </div>
+</div>
+<% } %>

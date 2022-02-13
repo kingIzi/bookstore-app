@@ -1,0 +1,166 @@
+<div
+  class="modal fade"
+  id="upload-modal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title text-light" id="exampleModalLabel">
+          Upload New Syllabus
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <form
+        enctype="multipart/form-data"
+        action="/upload-book"
+        id="add-book-form"
+        class="modal-body"
+        method="POST"
+      >
+        <div class="mb-3">
+          <label for="title-input" class="form-label text-light">Title</label>
+          <input
+            name="title"
+            type="text"
+            class="form-control"
+            id="title-input"
+            placeholder="Enter Book Title"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="author-input" class="form-label text-light">Author</label>
+          <input
+            name="author"
+            type="text"
+            class="form-control"
+            id="author-input"
+            placeholder="Enter Book Title"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="subject-input" class="form-label text-light"
+            >Subject</label
+          >
+          <input
+            name="subject"
+            type="text"
+            class="form-control"
+            id="subject-input"
+            placeholder="Enter Book Subject"
+          />
+        </div>
+        <select
+          name="category"
+          id="category-input"
+          class="mb-3 form-select"
+          aria-label="Default select example"
+          aria-placeholder="Please Select Category"
+        >
+          <% categories.forEach(element => { %>
+          <option value="<%= element %>"><%= element %></option>
+          <% }) %>
+        </select>
+        <div
+          class="mb-3 btn-group"
+          role="group"
+          aria-label="Basic checkbox toggle button group"
+        >
+          <input
+            disabled="true"
+            type="checkbox"
+            class="btn-check"
+            id="language-input"
+            autocomplete="off"
+          />
+          <label class="btn btn-outline-light" for="language-input"
+            >Languages</label
+          >
+          <input
+            name="swahili"
+            type="checkbox"
+            class="btn-check"
+            id="swahili-check"
+            autocomplete="off"
+          />
+          <label class="btn btn-outline-light" for="swahili-check"
+            >Swahili</label
+          >
+          <input
+            name="french"
+            type="checkbox"
+            class="btn-check"
+            id="french-check"
+            autocomplete="off"
+          />
+          <label class="btn btn-outline-light" for="french-check">French</label>
+          <input
+            name="english"
+            type="checkbox"
+            class="btn-check"
+            id="english-check"
+            autocomplete="off"
+          />
+          <label class="btn btn-outline-light" for="english-check"
+            >English</label
+          >
+        </div>
+        <div class="mb-3 form-group">
+          <label class="text-light" for="exampleFormControlTextarea2"
+            >Description</label
+          >
+          <textarea
+            name="description"
+            style="margin-top: 6px"
+            class="form-control rounded-0"
+            id="description-input"
+            rows="3"
+          ></textarea>
+        </div>
+        <div class="mb-3 form-group">
+          <label for="image-file" class="form-label text-light"
+            >Select Book Poster Image</label
+          >
+          <input
+            name="thumbnail"
+            class="form-control"
+            type="file"
+            id="image-file"
+            accept=".png,.jpeg,.jpg,.psd"
+          />
+        </div>
+        <div class="mb-3 form-group">
+          <label for="binary-file" class="form-label text-light"
+            >Select File (.pdf .txt)</label
+          >
+          <input
+            name="url"
+            class="form-control"
+            type="file"
+            id="binary-file"
+            accept=".pdf,.txt"
+          />
+        </div>
+      </form>
+      <div class="modal-footer">
+        <progress value="0" id="uploader" max="100">0%</progress>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <input
+          type="submit"
+          form="add-book-form"
+          class="btn btn-light"
+          id="submit-upload-form"
+        />
+      </div>
+    </div>
+  </div>
+</div>

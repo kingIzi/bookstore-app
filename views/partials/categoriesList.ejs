@@ -1,0 +1,11 @@
+<ul id="categories" class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+  <% if (Object.entries(query).length === 0) { %>
+      <% categories.forEach(element => { %>
+        <li><a class="dropdown-item text-white" href="/categories/<%= element %> "><%= element %> </a></li>
+        <% }) %>
+    <% } else { %>
+      <% categories.forEach(element => { %>
+        <li><a class="dropdown-item text-white <%= ((element === query.category) ? "active" : "") %>" href="/categories/<%= element %> "><%= element %> </a></li>
+        <% }) %>
+      <% } %>    
+</ul>
