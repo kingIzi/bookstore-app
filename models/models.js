@@ -36,8 +36,8 @@ const syllabusSchema = new Schema(
     description: { type: String, required: true },
     thumbnail: { type: Object, required: false },
     file: { type: Object, required: true },
-    imgUrl: { type: String, required: true },
-    bookUrl: { type: String, required: true },
+    // imgUrl: { type: String, required: true },
+    // bookUrl: { type: String, required: true },
   },
   { timestamps: true }
 );

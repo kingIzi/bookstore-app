@@ -12,8 +12,6 @@ class Requests {
       english: fields["english"],
       french: fields["french"],
       swahili: fields["swahili"],
-      imgUrl: fields["imgUrl"],
-      bookUrl: fields["bookUrl"],
       description: fields[["description"]],
       thumbnail: posterMetadata,
       file: bookMetadata,

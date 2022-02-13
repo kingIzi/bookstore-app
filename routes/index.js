@@ -57,10 +57,6 @@ router.post("/upload-book", (req, res) => {
       }
       var posterMetaData = null;
       var bookMetaData = null;
-      const bucketConfig = {
-        action: "read",
-        expires: Date.now() + 1000 * 60 * 60,
-      };
 
       for (const file of Object.entries(files)) {
         const name = `${fields["category"]}/${
@@ -69,6 +65,7 @@ router.post("/upload-book", (req, res) => {
         if (file[1].mimetype.includes("image")) {
           await bucket
             .upload(file[1].filepath, {
+              public: true,
               contentType: file[1].mimetype,
               destination: name,
               metadata: {
@@ -94,13 +91,6 @@ router.post("/upload-book", (req, res) => {
             });
         }
       }
-      const imgFileRef = bucket.file(posterMetaData.name);
-      const [imgUrl] = await imgFileRef.getSignedUrl(bucketConfig);
-      fields["imgUrl"] = imgUrl;
-
-      const bookFileRef = bucket.file(bookMetaData.name);
-      const [bookUrl] = await bookFileRef.getSignedUrl(bucketConfig);
-      fields["bookUrl"] = bookUrl;
       const requests = new handler();
       requests.uplodSyllabus(posterMetaData, bookMetaData, fields).then(() => {
         res.redirect("/");

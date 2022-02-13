@@ -27,26 +27,14 @@ router.get("/:openBook", (req, res) => {
         console.error(err);
       });
 
-    // const bucketConfig = {
-    //   action: "read",
-    //   expires: Date.now() + 1000 * 60 * 60,
-    // };
-
-    // const imgFileRef = bucket.file(books.thumbnail.name);
-    // const [imgUrl] = await imgFileRef.getSignedUrl(bucketConfig);
-    // books["imgUrl"] = imgUrl;
-
-    // const pdfFileRef = bucket.file(books.file.name);
-    // const [pdfUrl] = await pdfFileRef.getSignedUrl(bucketConfig);
-    // books["pdfUrl"] = pdfUrl;
-
-    const properties = {
-      categories: categories,
-      query: req.query,
-      books: books,
+    const bucketConfig = {
+      action: "read",
+      expires: Date.now() + 1000 * 60 * 60,
     };
-
-    res.render("viewingPdf", properties);
+    const pdfFileRef = bucket.file(books.file.name);
+    const [pdfUrl] = await pdfFileRef.getSignedUrl(bucketConfig);
+    books["bookUrl"] = pdfUrl;
+    res.redirect(pdfUrl)
   };
   getProperties(req, res);
 });
