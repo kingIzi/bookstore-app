@@ -4,98 +4,118 @@
   <body class="bg-dark">
     <%- include('partials/navigationBar.ejs') %> <%-
     include('partials/uploadForm.ejs') %>
-    <section class="fillWidthSection">
-      <div
-        id="carouselExampleCaptions"
-        class="carousel slide"
-        data-bs-ride="carousel"
-      >
-        <div class="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="0"
-            class="active"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-          ></button>
+    <main class="container-lg">
+      <div class="options-bar">
+        <form class="input-group" style="width: 100%">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search this blog"
+          />
+          <div class="input-group-append">
+            <button class="btn btn-secondary" type="button">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+        <div class="row filter-row">
+          <select
+            class="col border bg-dark text-light"
+            data-icon-base="bi"
+            data-tick-icon="bi-check"
+          >
+            <option value="Any" selected>
+              <p class="text-secondary">Book Category</p>
+              (Any)
+            </option>
+            <% categories.forEach(element => { %>
+            <option value="<%= element %>"><%= element %></option>
+            <% }) %> -->
+          </select>
+          <select
+            class="col border bg-dark text-light"
+            data-icon-base="bi"
+            data-tick-icon="bi-check"
+          >
+            <option value="" selected>Year Study (Any)</option>
+            <% yearStudies.forEach(element => { %>
+            <option value="<%= element %>"><%= element %></option>
+            <% }) %>
+          </select>
+          <select
+            class="col border bg-dark text-light"
+            data-icon-base="bi"
+            data-tick-icon="bi-check"
+          >
+            <option value="" selected>Sort</option>
+            <option value="">Oldest</option>
+            <option value="">Newest</option>
+            <option value="">Alphabetical</option>
+          </select>
+          <button class="col btn btn-secondary border" type="button">
+            <i class="bi bi-filter"></i>
+            Apply Changes
+          </button>
         </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img
-              src="images/good-faces-DSj40n6beGk-unsplash.jpg"
-              class="d-block w-100"
-              alt="..."
-            />
-            <div class="carousel-caption d-none d-md-block">
-              <h1 class="display-1">HALF EDUCATION IS MORE DANGEROUS THAN NO EDUCATION.</h1>
-            </div>
-            ins
+      </div>
+      <hr class="solid color-secondary" style="border-top: 1px solid #bbb" />
+      <div class="poster-container">
+        <div class="row row-cols-2">
+          <%- include("partials/codePenBookCover.ejs") %>
+        </div>
+      </div>
+      <hr class="solid color-secondary" style="border-top: 1px solid #bbb" />
+      <div class="">
+        <h1 class="text-white">Upcoming</h1>
+        <div class="row">
+          <div class="col">
+            <a
+              class="book-container"
+              href="https://theoutstanding.dev/"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <div class="book">
+                <img
+                  alt="The Outstanding Developer by Sebastien Castiel"
+                  src="https://theoutstanding.dev/cover.6a81c657.png"
+                />
+              </div>
+            </a>
           </div>
-          <div class="carousel-item">
-            <img
-              src="images/lagos-techie-IgUR1iX0mqM-unsplash.jpg"
-              class="d-block w-100"
-              alt="..."
-            />
-            <div class="carousel-caption d-none d-md-block">
-              <h1 class="display-1">EDUCATION IS THE MOST POWERFUL TOOL YOU CAN USE TO CHANGE THE WORLD.</h1>
-            </div>
+          <div class="col">
+            <a
+              class="book-container"
+              href="https://theoutstanding.dev/"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <div class="book">
+                <img
+                  alt="The Outstanding Developer by Sebastien Castiel"
+                  src="https://theoutstanding.dev/cover.6a81c657.png"
+                />
+              </div>
+            </a>
           </div>
-          <div class="carousel-item">
-            <img
-              src="images/felipe-gregate-Ph2KD5qr7VQ-unsplash.jpg"
-              class="d-block w-100"
-              alt="..."
-            />
-            <div class="carousel-caption d-none d-md-block">
-              <h1 class="display-1">YOU LEARN HOW TO CUT DOWN TREES BY CUTTING THEM DOWN.</h1>
-            </div>
+          <div class="col">
+            <a
+              class="book-container"
+              href="https://firebasestorage.googleapis.com/v0/b/syllabustz-bd7fd.appspot.com/o/Civil%20Engineering%2F1644954241715TechnoB%C3%A2t%20GROS%20OEUVRE.pdf?alt=media&token=33d2919b-e999-4a2e-9060-e2d51311d2d1"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <div class="book">
+                <img
+                  alt="The Outstanding Developer by Sebastien Castiel"
+                  src="https://firebasestorage.googleapis.com/v0/b/syllabustz-bd7fd.appspot.com/o/Civil%20Engineering%2F1644954233083syllabusCover-converted-1.png?alt=media&token=3c402370-bfde-4d9f-8337-a45eda30cf80"
+                />
+              </div>
+            </a>
           </div>
         </div>
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
       </div>
-    </section>
-    <div class="container book-container">
-      <p
-        class="h1 text-white"
-        style="padding: 10px; border: 1px solid white; margin-bottom: 15px"
-      >
-        All Available
-      </p>
-      <div class="row align-items-center">
-        <%- include("partials/bookPoster.ejs") %>
-      </div>
-    </div>
+    </main>
     <footer class="bg-light text-center text-lg-start">
       <!-- Copyright -->
       <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">

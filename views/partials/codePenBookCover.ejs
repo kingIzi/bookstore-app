@@ -1,0 +1,32 @@
+<% for (let i = 0; i < syllabuses.length; i++) { %>
+<div class="col">
+  <div class="d-flex">
+    <a
+      class="book-container"
+      href="<%= syllabuses[i].bookUrl %> "
+      target="_blank"
+      rel="noreferrer noopener"
+    >
+      <div class="book">
+        <img
+          alt="The Outstanding Developer by Sebastien Castiel"
+          src="<%= syllabuses[i].thumbnail %> "
+        />
+      </div>
+    </a>
+    <div class="book-details col">
+      <h2 class="text-light"><%= syllabuses[i].title %></h2>
+      <h6 class="text-info"><%= syllabuses[i].author %></h6>
+      <p class="text-secondary"><%= syllabuses[i].description %></p>
+      <div class="book-actions">
+        <p class="text-light">
+          <i>Category: </i> <%= syllabuses[i].category %>
+        </p>
+        <p class="text-info">
+          <i>Language(s): </i> <%= syllabuses[i].language %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<% } %>
